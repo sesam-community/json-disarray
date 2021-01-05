@@ -17,7 +17,7 @@ Example System Config
       "GRANT_TYPE": "client_credentials",
       "TOKEN_URL": "https://generic.ouath-provider/connect/token"
     },
-    "image": "sesamcommunity/mdmx:1.1.1",
+    "image": "sesamcommunity/json-disarray:1.1.1",
     "port": 5000
   },
   "verify_ssl": true
