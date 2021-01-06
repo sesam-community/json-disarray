@@ -35,8 +35,8 @@ def get_access_token():
     return token
 
 
-@app.route('/meteringpoints', methods=['POST','GET'])
-def meteringpoints():
+@app.route('/<path:path>', methods=['POST'])
+def meteringpoints(path):
 
     entities = request.get_json()
     # you might have to remove _ values form each entity
@@ -48,7 +48,7 @@ def meteringpoints():
     headers = {"accept": "application/json", "Content-Type": "application/json", "Authorization": "Bearer {}".format(token)}
     for i, entity in enumerate(entities):
         #remove values starting with '_'
-        req = requests.post(url = base_url + "/meteringpoints", headers=headers, data=json.dumps(entity))
+        req = requests.post(url = base_url + path, headers=headers, data=json.dumps(entity))
         if req.status_code != 200 and req.status_code != 201:
             logger.error("Unexpected response status code: %d with response text %s" % (req.status_code, req.text))
             raise AssertionError("Unexpected response status code: %d with response text %s" % (req.status_code, req.text))
