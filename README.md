@@ -49,16 +49,6 @@ Example endpoint pipe config
       ]
     }
   },
-  "pump": {
-    "log_events_noop_runs": true,
-    "log_events_noop_runs_changes_only": false,
-    "max_consecutive_write_errors": 50,
-    "max_read_retries": 3,
-    "max_retries_per_entity": 120,
-    "max_write_errors_in_retry_dataset": 1000,
-    "read_retry_delay": 5,
-    "schedule_interval": 300
-  },
   "batch_size": 1,
   "remove_namespaces": true
 }
